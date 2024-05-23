@@ -8,24 +8,24 @@ function Portfolios() {
             alt: "avatar"
         },
         {
-            source: "../user.jpg",
-            alt: "avatar"
+            source: "../avatars/@wallpaperinng.jpg",
+            alt: "Cute Raphael"
         },
         {
-            source: "../user.jpg",
-            alt: "avatar"
+            source: "../avatars/@wallpaperinng (2).jpg",
+            alt: "Cute Leonardo"
         },
         {
-            source: "../user.jpg",
-            alt: "avatar"
+            source: "../avatars/@wallpaperinng (3).jpg",
+            alt: "Game"
         },
         {
-            source: "../user.jpg",
-            alt: "avatar"
+            source: "../avatars/@wallpaperinng (5).jpg",
+            alt: "The Moon 1"
         },
         {
-            source: "../user.jpg",
-            alt: "avatar"
+            source: "../avatars/@wallpaperinng (6).jpg",
+            alt: "The Moon 2"
         }
         ]
     return (

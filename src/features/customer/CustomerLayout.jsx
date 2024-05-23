@@ -2,7 +2,7 @@ import React from 'react'
 import AppLayout from '../../ui/AppLayout'
 import CustomNavLink from '../../ui/CustomNavLink'
 import Sidebar from '../../ui/Sidebar'
-import { HiCollection, HiHome, HiOutlineTicket, HiUser, HiViewGrid } from 'react-icons/hi'
+import { HiClock, HiCollection, HiHome, HiOutlineTicket, HiUser, HiViewGrid } from 'react-icons/hi'
 
 function FreelancerLayout() {
   return (
@@ -31,6 +31,11 @@ function FreelancerLayout() {
             <CustomNavLink to="profile">
                 <HiUser />
                 <span>پروفایل</span>
+            </CustomNavLink>
+
+            <CustomNavLink to="times">
+                <HiClock />
+                <span>همه زمان ها <br />(مخصوص ادمین)</span>
             </CustomNavLink>
         </Sidebar>
     </AppLayout>
