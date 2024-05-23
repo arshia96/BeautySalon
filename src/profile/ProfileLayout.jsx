@@ -10,6 +10,7 @@ import Modal from '../../ui/Modal';
 import ConfirmDelete from '../../ui/ConfirmDelete';
 import { HiOutlineTrash } from 'react-icons/hi';
 import useRemoveUser from '../authentication/useRemoveUser';
+
 function ProfileLayout() {
   const queryClient = useQueryClient();
   const [ deleteOpen, setDeleteOpen ] = useState(false);

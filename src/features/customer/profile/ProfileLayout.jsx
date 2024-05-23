@@ -34,7 +34,7 @@ function ProfileLayout() {
 
   const { register, handleSubmit, formState: {errors} } = useForm({
     defaultValues: {
-      name: 'عرشیا محمودیان',
+      name: 'مشتری تست',
       email: 'email@gmail.com', 
       phoneNumber: '09120000000', 
       biography: 'بیوگرافی'
