@@ -1,35 +1,57 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import { Navigate, Route, Routes } from "react-router-dom";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import DarkModeProvider from './context/DarkModeContext'
+import { Toaster } from "react-hot-toast";
+import CustomerDashboard from './pages/CustomerDashboard'
+import CustomerReservTime from './pages/CustomerReservTime';
+import CustomerLayout from './features/customer/CustomerLayout';
+import NotFound from './pages/NotFound';
+import Home from './pages/Home';
+import Profile from './pages/Profile';
+import EventsCalendar from './features/date/EventsCalendar';
+import AllTimes from './features/customer/AllTimes';
+import Portfolios from './pages/Portfolios';
 
+const queryClient = new QueryClient();
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <DarkModeProvider>
+      <QueryClientProvider client={queryClient}>
+        <Toaster />
+        <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/demo" element={<EventsCalendar />} />
+            <Route path="*" element={<NotFound />} />
+
+            {/* Customer Dashboard */}
+            <Route path="/customer" element={
+                <CustomerLayout />
+            }>
+              <Route index element={<Navigate to="dashboard" replace />} />
+              <Route path="dashboard" element={<CustomerDashboard />} />
+              <Route path="reserv-time" element={<CustomerReservTime />} />
+              <Route path="profile" element={<Profile />} />
+              <Route path="portfolios" element={<Portfolios />} />
+              {/*Should Remove For Customers*/} <Route path="times" element={<AllTimes />} />
+            </Route>
+
+            {/* Owner Dashboard */}
+            <Route path="/owner" element={
+                  <CustomerLayout />
+              }>
+                <Route index element={<Navigate to="dashboard" replace />} />
+                <Route path="dashboard" element={<CustomerDashboard />} />
+                <Route path="reserv-time" element={<CustomerReservTime />} />
+                <Route path="profile" element={<Profile />} />
+                <Route path="portfolios" element={<Portfolios />} />
+                {/*Should Remove For Customers*/} <Route path="times" element={<AllTimes />} />
+            </Route>
+
+          </Routes>
+      </QueryClientProvider>
+    </DarkModeProvider>
+  );
 }
 
-export default App
+export default App;
