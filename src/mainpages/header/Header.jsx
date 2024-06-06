@@ -10,7 +10,7 @@ function Header() {
       <div className={`container xl:max-w-screen-lg flex flex-row justify-between items-center text-center`}>
         
         <div className='flex flex-row items-center align-middle'>
-          <h1 className='text-lg text-secondary-700'>سالن زیبایی آفاق</h1>
+          <h1 className='text-lg text-purple-700'>سالن زیبایی آفاق</h1>
         </div>
         {/* <div className={`items-center justify-end gap-x-8 xl:max-w-screen-lg flex
             ${isLoading ? "blur-sm opacity-50" : ""}`}>

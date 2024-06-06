@@ -14,19 +14,19 @@ function HeaderAccountItems() {
                 <>
                 <li className='flex'>
                     <Link to="profile">
-                        <HiOutlineUser className='hi-icon text-primary-900' />
+                        <HiOutlineUser className='hi-icon text-purple-900' />
                     </Link>
                 </li>
                 <li className='flex'>
                     {/* <Logout></Logout> */}
                     <Link to="logout">
-                        <HiOutlineLogout className='hi-icon text-primary-900' />
+                        <HiOutlineLogout className='hi-icon text-purple-900' />
                     </Link>
                 </li>
                 </>
             ) : (
                 <li className='flex'>
-                    <Link to="auth" className='btn btn--primary flex gap-x-2 text-white p-2'>
+                    <Link to="auth" className='btn bg-purple-600 flex gap-x-2 text-white p-2'>
                         <HiOutlineLogin className='hi-icon text-white' />
                         <p>ورود به سایت</p>
                     </Link>

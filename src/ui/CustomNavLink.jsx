@@ -8,8 +8,8 @@ export default function CustomNavLink ({ children, to }) {
                 to={to}         
                 className={
                     ({isActive}) => isActive ? 
-                    `${navlinkClass} bg-primary-100/80 text-primary-900` : 
-                    `${navlinkClass} text-secondary-600`}
+                    `${navlinkClass} bg-purple-100/80 text-purple-800` : 
+                    `${navlinkClass} text-purple-600`}
             >
                 {children}
             </NavLink>

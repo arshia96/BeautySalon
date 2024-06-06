@@ -12,6 +12,7 @@ import Profile from './pages/Profile';
 import EventsCalendar from './features/date/EventsCalendar';
 import AllTimes from './features/customer/AllTimes';
 import Portfolios from './pages/Portfolios';
+import Auth from './pages/Auth';
 
 const queryClient = new QueryClient();
 function App() {
@@ -23,6 +24,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/demo" element={<EventsCalendar />} />
             <Route path="*" element={<NotFound />} />
+            <Route path="/auth" element={<Auth />} />
 
             {/* Customer Dashboard */}
             <Route path="/customer" element={
