@@ -1,6 +1,6 @@
 import React from 'react'
 
-function TextField({ label, title='', name, register, validationSchema, type="text", required, errors, size="normal", className, disabled=false }) {
+function TextField({ label, title='', name, register, validationSchema, type="text", required, errors, size="normal", className="", disabled=false }) {
   return (
     <div>
         <label className='mb-2 block text-secondary-700' htmlFor={name}>
@@ -15,6 +15,7 @@ function TextField({ label, title='', name, register, validationSchema, type="te
             type={type}
             autoComplete='off'
             disabled={disabled}
+            required={required}
           />
         ) : (
           <textarea 
@@ -24,6 +25,7 @@ function TextField({ label, title='', name, register, validationSchema, type="te
             type={type}
             autoComplete='off'
             disabled={disabled}
+            required={required}
           />
         )}
         
