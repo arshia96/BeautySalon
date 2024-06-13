@@ -7,6 +7,16 @@ function SendOTPForm({ setStep }) {
     const { register, handleSubmit, formState:{errors} } = useForm();
     const onSubmit = (data) => {
         console.log(data);
+        var regexphone = new RegExp('^(\\+98|0)?9\\d{9}$');
+        var resultphone = regexphone.test(data.loginMethod);
+        var regexemail = new RegExp(/^(?:[A-Z0-9._%+-]+@\w+\.\w{2,3})$/i);
+        var resultemail = regexemail.test(data.loginMethod); 
+        if (resultphone) {
+            console.log("this should sent to phone api");
+        }
+        else if (resultemail) {
+            console.log("this should sent to email api");
+        }
         // if data is ok
         setStep(2);
     }
@@ -17,12 +27,8 @@ function SendOTPForm({ setStep }) {
                     label="شماره تلفن یا ایمیل"
                     className='border border-purple-50' 
                     type="tel" 
-                    name="phoneNumber" 
+                    name="loginMethod" 
                     validationSchema = {{
-                        // minLength :{
-                        //     value: 8, 
-                        //     message: "شماره تلفن خود را درست وارد کنید" 
-                        // },
                         pattern : {
                             value : /^(?:\d{11}|[A-Z0-9._%+-]+@\w+\.\w{2,3})$/i,
                             message : "ایمیل یا شماره تلفن نامعتبر است"

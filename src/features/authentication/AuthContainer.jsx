@@ -15,7 +15,8 @@ function AuthContainer() {
     }
     const [step, setStep] = useState(1);
     return (
-        <div className='flex flex-col h-screen overflow-hidden' style={style}>
+        <div className='h-screen w-full' style={style}>
+            <div className='bg-secondary-50 h-screen bg-opacity-10 flex flex-col overflow-hidden'>
             {step===1 ? (
                 <SendOTPForm setStep={setStep} />
             ) : step===2 ? (
@@ -23,6 +24,7 @@ function AuthContainer() {
             ) : (
                 <NotFound />
             )}
+            </div>
         </div>
     )
 }
