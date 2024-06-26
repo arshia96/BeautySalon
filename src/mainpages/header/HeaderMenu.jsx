@@ -30,6 +30,11 @@ function HeaderMenu() {
                     <p>تماس با ما</p>
                 </CustomHeaderNavLink>
             </li>
+            <li className='flex'>
+                <CustomHeaderNavLink to="auth">
+                    <p>صفحه ورود</p>
+                </CustomHeaderNavLink>
+            </li>
         </ul>
     )
 }

@@ -3,8 +3,8 @@ import { HiOutlineLogin, HiOutlineLogout, HiOutlineUser, HiOutlineX } from 'reac
 import { Link } from 'react-router-dom'
 import DarkModeToggle from '../../ui/DarkModeToggle'
 
-function HeaderAccountItems() {
-    const [ isLoggedIn, setIsLoggedIn ] = useState(true);
+function HeaderAccountItems({ isLoggedIn, setIsLoggedIn }) {
+    //const [ isLoggedIn, setIsLoggedIn ] = useState(true);
     return (
         <ul className='flex gap-x-5 items-center align-middle'>
             <li className='flex'>
@@ -23,14 +23,14 @@ function HeaderAccountItems() {
                 </li>
                 <li className='flex'>
                     {/* <Logout></Logout> */}
-                    <Link to="logout">
+                    {/* to="logout" */}<Link onClick={() => setIsLoggedIn(false)}>
                         <HiOutlineLogout className='hi-icon text-purple-900' />
                     </Link>
                 </li>
                 </>
             ) : (
                 <li className='flex'>
-                    <Link to="auth" className='btn bg-purple-600 flex gap-x-2 text-white p-2 dark:bg-purple-200'>
+                    {/* to="auth" */}<Link onClick={() => setIsLoggedIn(true)} className='btn bg-purple-600 flex gap-x-2 text-white p-2 dark:bg-purple-200'>
                         <HiOutlineLogin className='hi-icon text-white' />
                         <p>ورود به سایت</p>
                     </Link>

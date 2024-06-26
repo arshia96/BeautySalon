@@ -1,8 +1,10 @@
 import React from 'react'
 import HeaderAccountItems from './HeaderAccountItems';
 import HeaderMenu from './HeaderMenu';
+import { useState } from 'react';
 
 function Header() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   return (
     <header className='py-4 px-8 border-b border-secondary-200 rounded-3xl w-3/4 mx-auto h-fit bg-header bg-opacity-60 dark:bg-opacity-30'>
       <div className={`container xl:max-w-screen-lg flex flex-row justify-between items-center text-center`}>
@@ -20,7 +22,7 @@ function Header() {
           </div>
 
           <div className='items-center justify-end gap-x-8 xl:max-w-screen-xl flex'>
-            <HeaderAccountItems />
+            <HeaderAccountItems isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
           </div>
       </div>
     </header>

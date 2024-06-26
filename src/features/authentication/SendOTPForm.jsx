@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form'
 import TextField from '../../ui/TextField';
 import Form from '../../ui/Form';
 
-function SendOTPForm({ setStep }) {
+function SendOTPForm({ setStep, setEmail, setPhoneNumber, setMethod }) {
     const { register, handleSubmit, formState:{errors} } = useForm();
     const onSubmit = (data) => {
         console.log(data);
@@ -13,9 +13,13 @@ function SendOTPForm({ setStep }) {
         var resultemail = regexemail.test(data.loginMethod); 
         if (resultphone) {
             console.log("this should sent to phone api");
+            setMethod("phoneNumber");
+            setPhoneNumber(data.loginMethod);
         }
         else if (resultemail) {
             console.log("this should sent to email api");
+            setMethod("email");
+            setEmail(data.loginMethod);
         }
         // if data is ok
         setStep(2);

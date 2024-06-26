@@ -17,7 +17,7 @@ const ROLEUrls = {
   OWNER : "/owner"
 }
 
-function CheckOTPForm({ phoneNumber = '', email = '', onBack, onReSendOtp, otpResponse }) {
+function CheckOTPForm({ wayOtp, onBack, onReSendOtp, otpResponse }) {
     const [otp, setOtp] = useState('');
     useReadOTP(setOtp);
     const [time, setTime] = useState(RESEND_TIME);
