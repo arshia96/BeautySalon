@@ -1,30 +1,23 @@
 import React from 'react'
 import Loading from '../ui/Loading';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Header from '../mainpages/header/Header';
 import SingleImageCard from '../ui/SingleImageCard';
-import SingleTextCard from '../ui/SingleTextCard';
-import { HiOutlineMail, HiOutlinePhone, HiOutlinePlusCircle, HiPhone } from 'react-icons/hi';
+import { HiOutlineMail, HiOutlinePhone, HiOutlinePlusCircle } from 'react-icons/hi';
 import { HiOutlineArrowTopRightOnSquare } from 'react-icons/hi2';
-import { SocialIcon } from 'react-social-icons';
+import CardImageText from '../ui/CardImageText';
+import CardImageNoText from '../ui/CardImageNoText';
+import CustomNavLink from '../ui/CustomNavLink';
+import CustomSocialMediaIcon from '../ui/CustomSocialMediaIcon';
+import SingleWideCard from '../ui/SingleWideCard';
+import TopHeader from '../mainpages/header/TopHeader';
 function Home() {
   const navigate = useNavigate();
   return (
-    <div className='h-full bg-pink-50 '>
+    <div className='h-full bg-pink-50'>
       <div className=''>
         <section>
-          <div className='container xl:max-w-screen-xl h-8 rounded-md bg-pink-50 flex gap-x-10 py-1 px-10'>
-            <a href="mailto:info@beautysalon.ir">
-              <p className='flex gap-x-2' style={{direction: "ltr"}}>
-                <HiOutlineMail className='hi-icon' /> info@beautysalon.ir
-              </p>
-            </a>
-            <a href="tel:+989120000000">
-              <p className='flex gap-x-2' style={{direction: "ltr"}}>
-                <HiOutlinePhone className='hi-icon' /> +989120000000
-              </p>
-            </a>
-          </div>
+          <TopHeader />
         </section>
 
         <section>
@@ -34,19 +27,19 @@ function Home() {
           >
             <Header />
             <div className='m-auto flex-col flex gap-y-3 bg-white bg-opacity-55 p-5 rounded-md'>
-              <p className='text-2xl text-purple-700'>یک شعاری رو به ما بسپارید</p>
+              <p className='text-2xl text-purple-700 dark:text-purple-200'>یک شعاری رو به ما بسپارید</p>
               <div className='flex gap-x-3 mx-auto'>
                 <button 
-                  className='flex gap-x-1 px-3 py-1 border border-purple-800 text-purple-800 
-                  justify-center rounded-xl transition-all ease-in-out duration-300 hover:bg-purple-800 
-                  hover:text-white'
+                  className='flex gap-x-1 px-3 py-1 border border-purple-800 text-purple-800  
+                  justify-center rounded-xl transition-all ease-in-out duration-300 hover:bg-purple-800 hover:text-white
+                  dark:bg-purple-100 dark:hover:bg-purple-50'
                 >
                   تماس با ما <HiOutlinePhone className='hi-icon' />
                 </button>
                 <button 
-                  className='flex gap-x-1 px-3 py-1 border border-purple-800 text-purple-800 
-                  justify-center rounded-xl transition-all ease-in-out duration-300 hover:bg-purple-800 
-                  hover:text-white'
+                  className='flex gap-x-1 px-3 py-1 border border-purple-800 text-purple-800
+                  justify-center rounded-xl transition-all ease-in-out duration-300 hover:bg-purple-800 hover:text-white
+                  dark:bg-purple-100 dark:hover:bg-purple-50'
                 >
                   رزرو تایم <HiOutlinePlusCircle className='hi-icon' />
                 </button>
@@ -70,9 +63,9 @@ function Home() {
               </div>
             </div>
             <div className="w-1/2 pt-5 space-y-4">
-              <h2 className='text-2xl'> ما کی هستیم؟ </h2>
-              <p className='text-md w-96 text-justify'>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای نقطه.</p>
-              <button className='btn btn--primary flex gap-x-2 justify-center'>
+              <h2 className='text-2xl text-secondary-900'> ما کی هستیم؟ </h2>
+              <p className='text-md w-96 text-justify text-secondary-700'>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای نقطه.</p>
+              <button className='btn btn--primary flex gap-x-2 justify-center dark:bg-purple-100 dark:hover:bg-purple-50'>
                 در مورد ما بیشتر بدانید <HiOutlineArrowTopRightOnSquare className='hi-icon' />
               </button>
             </div>
@@ -82,71 +75,55 @@ function Home() {
         <section className='bg-pink-200 pt-20 pb-28'>
           <section className=''>
             <div className="container xl:max-w-screen-xl grid grid-cols-3 gap-x-5 h-72">
-              <div className='shadow-purple-300 shadow-md relative pt-16 rounded-md'>
-                <img className='absolute right-36 -top-14 rounded-lg' src="user.jpg" alt="" />
-                <h3 className='text-xl font-bold text-center text-secondary-800'>عنوان 1</h3>
+              <CardImageText
+              imgSrc = "user.jpg"
+              title = "عنوان 1"
+              btnText = "بیشتر بدانید"
+              onclick={() => {}}
+              >
                 <p className='text-secondary-600 text-justify m-4'>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و غیره است</p>
-                <div className='w-full flex justify-center absolute bottom-2'>
-                  <button className='text-white btn btn--secondary text-center py-2 rounded-full w-48'>بیشتر بدانید</button>
-                </div>
-              </div>
+              </CardImageText>
 
-              <div className='shadow-purple-300 shadow-md relative pt-16 rounded-md'>
-                <img className='absolute right-36 -top-14 rounded-lg' src="user.jpg" alt="" />
-                <h3 className='text-xl font-bold text-center text-secondary-800'>عنوان 2</h3>
+              <CardImageText
+              imgSrc = "user.jpg"
+              title = "عنوان 2"
+              btnText = "رزرو تایم"
+              btnColor= 'primary'
+              onclick={() => {}}
+              >
                 <p className='text-secondary-600 text-justify m-4'>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و غیره است</p>
-                <div className='w-full flex justify-center absolute bottom-2'>
-                  <button className='text-white btn btn--primary text-center py-2 rounded-full w-48'>رزرو تایم</button>
-                </div>
-              </div>
+              </CardImageText>
 
-              <div className='shadow-purple-300 shadow-md relative pt-16 rounded-md'>
-                <img className='absolute right-36 -top-14 rounded-lg' src="user.jpg" alt="" />
-                <h3 className='text-xl font-bold text-center text-secondary-800'>عنوان 3</h3>
+              <CardImageText
+              imgSrc = "user.jpg"
+              title = "عنوان 3"
+              btnText = "بیشتر بدانید"
+              onclick={() => {}}
+              >
                 <p className='text-secondary-600 text-justify m-4'>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و غیره است</p>
-                <div className='w-full flex justify-center absolute bottom-2'>
-                  <button className='text-white btn btn--secondary text-center py-2 rounded-full w-48'>بیشتر بدانید</button>
-                </div>
-              </div>
+              </CardImageText>
             </div>
           </section>
 
           <section className=''>
             <div className="mt-28 container xl:max-w-screen-xl grid grid-cols-2 gap-x-10 h-80">
-              <div className='h-full space-y-5'>
-                <div className='w-full h-72 overflow-hidden rounded-md'>
-                  <img className='mx-auto' src="images/rightside.jpg" alt="" />
-                </div>
-                <h3 className='text-xl text-center font-bold text-secondary-900'>عنوان سمت راست</h3>
-                <button className='btn btn--secondary w-48 flex justify-center mx-auto py-2'>کلیک کنید</button>
-              </div>
-
-              <div className='h-full space-y-5'>
-                <div className='w-full h-72 overflow-hidden rounded-md'>
-                  <img className='mx-auto' src="images/leftside.jpg" alt="" />
-                </div>
-                <h3 className='text-xl text-center font-bold text-secondary-900'>عنوان سمت چپ</h3>
-                <button className='btn btn--secondary w-48 flex justify-center mx-auto py-2'>کلیک کنید</button>
-              </div>
+              <CardImageNoText imgSrc="images/rightside.jpg" title="عنوان سمت راست" btnText="کلیک کنید" onclick={() => {}} />
+              <CardImageNoText imgSrc="images/leftside.jpg" title="عنوان سمت چپ" btnText="کلیک کنید" onclick={() => {}} />
             </div>
           </section>
         </section>
 
         <section className=''>
           <div className='mt-10 container xl:max-w-screen-xl flex gap-x-10 justify-center' style={{height: "50vh"}}>
-            <div className="w-1/3">
-              <div className='w-full flex h-full overflow-hidden rounded-md'>
-                <img className='m-auto rounded-md' src="images/artist.jpg" alt="" />
-              </div>
-            </div>
-            <div className="w-2/3 space-y-4">
-              <h2 className='text-2xl'> هنرمندان ما</h2>
-              <p className='text-md text-justify w-10/12'>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای نقطه.</p>
-              <p className='text-md text-justify w-10/12'>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای نقطه.</p>
-              <button className='btn btn--primary flex gap-x-2 justify-center'>
-                مشاهده اعضای تیم <HiOutlineArrowTopRightOnSquare className='hi-icon' />
-              </button>
-            </div>
+            <SingleWideCard
+              imgSrc="images/artist.jpg"
+              title="هنرمندان ما"
+              buttonText=" مشاهده اعضای تیم "
+              onclick={() => {}}
+            >
+              <p className='text-md text-justify w-10/12 text-secondary-700'>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای نقطه.</p>
+              <p className='text-md text-justify w-10/12 text-secondary-700'>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای نقطه.</p>
+            </SingleWideCard>
           </div>
         </section>
 
@@ -166,40 +143,34 @@ function Home() {
 
         <section className='pt-16 pb-96'>
           <div className="container xl:max-w-screen-xl h-72">
-            <h2 className='text-center text-2xl font-bold mb-20'>خدمات ما</h2>
+            <h2 className='text-center text-2xl font-bold mb-20 text-secondary-900'>خدمات ما</h2>
             <div className='grid grid-cols-3 gap-x-5'>
-              <div className='rounded-md pb-2 space-y-5'>
-                <div className='flex overflow-hidden rounded-md'>
-                  <img className='m-auto rounded-md h-64' src="images/leftside.jpg" alt="" />
-                </div>
-                <h3 className='text-xl font-bold text-center text-secondary-800'>عنوان 1</h3>
+              <SingleImageCard
+                imgSrc="images/leftside.jpg"
+                title="عنوان 1"
+                btnText="بیشتر بدانید"
+                onclick={() => {}}
+              >
                 <p className='text-secondary-600 text-justify m-4'>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و غیره است</p>
-                <div className='w-full flex justify-center'>
-                  <button className='text-white btn btn--secondary text-center py-2 rounded-full w-48'>بیشتر بدانید</button>
-                </div>
-              </div>
+              </SingleImageCard>
 
-              <div className='rounded-md pb-2 space-y-5'>
-                <div className='flex overflow-hidden rounded-md'>
-                  <img className='m-auto rounded-md h-64' src="images/artist.jpg" alt="" />
-                </div>
-                <h3 className='text-xl font-bold text-center text-secondary-800'>عنوان 2</h3>
+              <SingleImageCard
+                imgSrc="images/artist.jpg"
+                title="عنوان 2"
+                btnText="بیشتر بدانید"
+                onclick={() => {}}
+              >
                 <p className='text-secondary-600 text-justify m-4'>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و غیره است</p>
-                <div className='w-full flex justify-center'>
-                  <button className='text-white btn btn--secondary text-center py-2 rounded-full w-48'>بیشتر بدانید</button>
-                </div>
-              </div>
-
-              <div className='rounded-md pb-2 space-y-5'>
-                <div className='flex overflow-hidden rounded-md'>
-                  <img className='m-auto rounded-md h-64' src="images/rightside.jpg" alt="" />
-                </div>
-                <h3 className='text-xl font-bold text-center text-secondary-800'>عنوان 3</h3>
+              </SingleImageCard>
+              
+              <SingleImageCard
+                imgSrc="images/rightside.jpg"
+                title="عنوان 3"
+                btnText="بیشتر بدانید"
+                onclick={() => {}}
+              >
                 <p className='text-secondary-600 text-justify m-4'>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و غیره است</p>
-                <div className='w-full flex justify-center'>
-                  <button className='text-white btn btn--secondary text-center py-2 rounded-full w-48'>بیشتر بدانید</button>
-                </div>
-              </div>
+              </SingleImageCard>
             </div>
           </div>
         </section>
@@ -212,40 +183,40 @@ function Home() {
             <hr className='w-full h-0.5 bg-purple-300' />
             <div className='flex flex-row justify-around'>
               <div className="flex flex-col">
-                <h3 className='text-xl mx-auto'>دسترسی سریع</h3>
+                <h3 className='text-xl mx-auto text-secondary-800'>دسترسی سریع</h3>
                 <ul className='h-full flex flex-col justify-between gap-y-0.5'>
-                  <li className='mt-1 p-1 w-48 rounded-md transition-all ease-in-out duration-300 text-purple-700 hover:text-purple-500'><a href='#!'>⁘ خانه</a></li>
-                  <li className='p-1 w-48 rounded-md transition-all ease-in-out duration-300 text-purple-700 hover:text-purple-500'><a href='#!'>⁘ بلاگ</a></li>
-                  <li className='p-1 w-48 rounded-md transition-all ease-in-out duration-300 text-purple-700 hover:text-purple-500'><a href='#!'>⁘ نمونه کار</a></li>
-                  <li className='p-1 w-48 rounded-md transition-all ease-in-out duration-300 text-purple-700 hover:text-purple-500'><a href='#!'>⁘ تعرفه ها</a></li>
-                  <li className='p-1 w-48 rounded-md transition-all ease-in-out duration-300 text-purple-700 hover:text-purple-500'><a href='#!'>⁘ تماس با ما</a></li>
+                  <CustomNavLink to={"#!"}>  <p>خانه</p>  </CustomNavLink>
+                  <CustomNavLink to={"#!"}>  <p>بلاگ</p>  </CustomNavLink>
+                  <CustomNavLink to={"#!"}>  <p>نمونه کار</p>  </CustomNavLink>
+                  <CustomNavLink to={"#!"}>  <p>تعرفه ها</p>  </CustomNavLink>
+                  <CustomNavLink to={"#!"}>  <p>تماس با ما</p>  </CustomNavLink>
                 </ul>
               </div>
               <div className="flex flex-col">
-                <h3 className='text-xl mx-auto'>رزرو تایم</h3>
+                <h3 className='text-xl mx-auto text-secondary-800'>رزرو تایم</h3>
                 <ul className='h-full flex flex-col justify-between gap-y-0.5'>
-                  <li className='mt-1 p-1 w-48 rounded-md transition-all ease-in-out duration-300 text-purple-700 hover:text-purple-500'><a href='#!'>⁘ لیفت ابرو</a></li>
-                  <li className='p-1 w-48 rounded-md transition-all ease-in-out duration-300 text-purple-700 hover:text-purple-500'><a href='#!'>⁘ کاشت ناخن</a></li>
-                  <li className='p-1 w-48 rounded-md transition-all ease-in-out duration-300 text-purple-700 hover:text-purple-500'><a href='#!'>⁘ رنگ مو</a></li>
-                  <li className='p-1 w-48 rounded-md transition-all ease-in-out duration-300 text-purple-700 hover:text-purple-500'><a href='#!'>⁘ کوتاهی مو</a></li>
-                  <li className='p-1 w-48 rounded-md transition-all ease-in-out duration-300 text-purple-700 hover:text-purple-500'><a href='#!'>⁘ پدیکور و مانیکور</a></li>
+                  <CustomNavLink to={"#!"}>  <p>لیفت ابرو</p>  </CustomNavLink>
+                  <CustomNavLink to={"#!"}>  <p>کاشت ناخن</p>  </CustomNavLink>
+                  <CustomNavLink to={"#!"}>  <p>سلامت پوست</p>  </CustomNavLink>
+                  <CustomNavLink to={"#!"}>  <p>کوتاهی و رنگ مو</p>  </CustomNavLink>
+                  <CustomNavLink to={"#!"}>  <p>شینیون</p>  </CustomNavLink>
                 </ul>
               </div>
               <div className="flex flex-col">
-                <h3 className='text-xl mx-auto'>راه های ارتباط با ما</h3>
+                <h3 className='text-xl mx-auto text-secondary-800'>راه های ارتباط با ما</h3>
                 <ul className='flex flex-col gap-y-0.5'>
                   <li className='text-sm mt-1 py-2 px-3 w-56 transition-all ease-in-out duration-300 text-purple-700 hover:text-purple-500 font-bold'><a className='flex gap-x-2' href='#!'><HiOutlinePhone className='hi-icon' /><span style={{direction: "ltr"}}>0912 345 6789</span></a></li>
                   <li className='text-sm py-2 px-3 w-56 transition-all ease-in-out duration-300 text-purple-700 hover:text-purple-500 font-bold'><a className='flex gap-x-2' href='#!'><HiOutlineMail className='hi-icon' /><span style={{direction: "ltr"}}>info@beautysalon.com</span></a></li>
                 </ul>
                 <div className='mt-8 flex gap-x-2 justify-center'>
-                  <a className='flex gap-x-1' href='#!'><SocialIcon className='transition-all duration-300 hover:-translate-y-1' style={{width: "30px", height: "30px"}} url='https://telegram.com/amahmoudian_ir' target='_blank' /></a>
-                  <a className='flex gap-x-1' href='#!'><SocialIcon className='transition-all duration-300 hover:-translate-y-1' style={{width: "30px", height: "30px"}} url='https://instagram.com/amahmoudian.ir' target='_blank' /></a>
-                  <a className='flex gap-x-1' href='#!'><SocialIcon className='transition-all duration-300 hover:-translate-y-1' style={{width: "30px", height: "30px"}} url='https://youtube.com/amahmoudian.ir' target='_blank' /></a>
-                  <a className='flex gap-x-1' href='#!'><SocialIcon className='transition-all duration-300 hover:-translate-y-1' style={{width: "30px", height: "30px"}} url='https://www.linkedin.com/in/arshiamah' target='_blank' /></a>
+                  <CustomSocialMediaIcon href="#!" iconUrl="https://telegram.com/amahmoudian_ir" />
+                  <CustomSocialMediaIcon href="#!" iconUrl="https://instagram.com/amahmoudian.ir" />
+                  <CustomSocialMediaIcon href="#!" iconUrl="https://youtube.com/amahmoudian.ir" />
+                  <CustomSocialMediaIcon href="#!" iconUrl="https://www.linkedin.com/in/arshiamah" />
                 </div>
               </div>
             </div>
-            <div className='text-center'>
+            <div className='text-center text-secondary-800'>
               © {new Date().getFullYear()} سالن آفاق -  تمام حقوق اين وب‌سايت متعلق به سالن آرایشی آفاق است
             </div>
           </div>

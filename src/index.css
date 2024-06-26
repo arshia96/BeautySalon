@@ -35,6 +35,30 @@
       --color-error: 255, 71, 87;
       --color-red-500: 239, 68, 68;
       --color-red-300: 252, 165, 165;
+      --color-pink-50: 253, 242, 248;
+      --color-pink-100: 252, 231, 243;
+      --color-pink-200: 251, 207, 232;
+      --color-pink-300: 249, 168, 212;
+      --color-pink-400: 244, 114, 182;
+      --color-pink-500: 236, 72, 153;
+      --color-pink-600: 219, 39, 119;
+      --color-pink-700: 190, 24, 93;
+      --color-pink-800: 157, 23, 77;
+      --color-pink-900: 131, 24, 67;
+      --color-pink-950: 80, 7, 36;
+      
+      --color-purple-50: 250, 245, 255;
+      --color-purple-100: 243, 232, 255;
+      --color-purple-200: 233, 213, 255;
+      --color-purple-300: 216, 180, 254;
+      --color-purple-400: 192, 132, 252;
+      --color-purple-500: 168, 85, 247;
+      --color-purple-600: 147, 51, 234;
+      --color-purple-700: 126, 34, 206;
+      --color-purple-800: 107, 33, 168;
+      --color-purple-900: 88, 28, 135;
+      --color-purple-950: 59, 7, 100;
+      --color-bg-header: 255, 255, 255;
     }
     &.dark-mode {
       --color-secondary-900: 249, 250, 251;
@@ -49,6 +73,29 @@
       --color-secondary-50: 17, 24, 39;
       --color-secondary-0: 24, 33, 47;
       --backdrop-color: 0, 0, 0;
+      --color-pink-50: 31,26,56; /* 80, 7, 36; */
+      --color-pink-100: 60, 32, 100; /* 131, 24, 67; */
+      --color-pink-200: 45, 30, 100; /* 157, 23, 77; */
+      --color-pink-300: 190, 24, 93;
+      --color-pink-400: 219, 39, 119;
+      --color-pink-500: 236, 72, 153;
+      --color-pink-600: 244, 114, 182;
+      --color-pink-700: 249, 168, 212;
+      --color-pink-800: 251, 207, 232;
+      --color-pink-900: 252, 231, 243;
+      --color-pink-950: 253, 242, 248;
+      --color-purple-50: 59, 7, 100;
+      --color-purple-100: 88, 28, 135;
+      --color-purple-200: 107, 33, 168;
+      --color-purple-300: 126, 34, 206;
+      --color-purple-400: 147, 51, 234;
+      --color-purple-500: 168, 85, 247;
+      --color-purple-600: 192, 132, 252;
+      --color-purple-700: 216, 180, 254; /* 221,153,187; */
+      --color-purple-800: 233, 213, 255;
+      --color-purple-900: 243, 232, 255;
+      --color-purple-950: 48, 7, 100; /* 250, 245, 255; */
+      --color-bg-header: 0, 0, 0;
     }
   }
 }
@@ -81,13 +128,13 @@
     @apply px-3 py-1 font-bold rounded-xl transition-all duration-300;
   }
   .btn--primary {
-    @apply px-4 py-3 bg-purple-600 text-white hover:bg-purple-700 shadow-lg shadow-purple-300 dark:shadow-secondary-200;
+    @apply px-4 py-3 bg-purple-600 text-white hover:bg-purple-700 shadow-lg shadow-purple-300 dark:shadow-secondary-200 dark:bg-purple-100 dark:hover:bg-purple-50;
   }
   .btn--blue {
     @apply px-4 py-3 bg-primary-900 text-white hover:bg-primary-800 shadow-lg shadow-primary-300 dark:shadow-secondary-200;
   }
   .btn--secondary {
-    @apply bg-secondary-600 text-secondary-100 hover:bg-secondary-700 shadow-sm shadow-secondary-300 dark:shadow-secondary-200;
+    @apply bg-secondary-600 text-secondary-100 hover:bg-secondary-700 shadow-sm shadow-secondary-300 dark:shadow-secondary-400 dark:bg-secondary-300 dark:hover:bg-secondary-200;
   }
   .btn--outline {
     @apply border border-secondary-700 text-secondary-700;
@@ -228,3 +275,4 @@ table td {
 .w-101 {
   width: 28rem;
 }
+

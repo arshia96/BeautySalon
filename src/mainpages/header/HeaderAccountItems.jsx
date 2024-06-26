@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom'
 import DarkModeToggle from '../../ui/DarkModeToggle'
 
 function HeaderAccountItems() {
-    const [ isLoggedIn, setIsLoggedIn ] = useState(false);
+    const [ isLoggedIn, setIsLoggedIn ] = useState(true);
     return (
-        <ul className='flex gap-x-4 items-center align-middle'>
+        <ul className='flex gap-x-5 items-center align-middle'>
             <li className='flex'>
                 <DarkModeToggle />
             </li>
@@ -14,7 +14,11 @@ function HeaderAccountItems() {
                 <>
                 <li className='flex'>
                     <Link to="profile">
-                        <HiOutlineUser className='hi-icon text-purple-900' />
+                        {/* <HiOutlineUser className='hi-icon text-purple-900' /> */}
+                        <div className='flex gap-x-2 justify-center items-center'>
+                            <img className='w-8 h-8 rounded-full' src="user.jpg" alt="profile" />
+                            <p className='text-center text-purple-800 mt-1'>کاربر تست</p>
+                        </div>
                     </Link>
                 </li>
                 <li className='flex'>
@@ -26,7 +30,7 @@ function HeaderAccountItems() {
                 </>
             ) : (
                 <li className='flex'>
-                    <Link to="auth" className='btn bg-purple-600 flex gap-x-2 text-white p-2'>
+                    <Link to="auth" className='btn bg-purple-600 flex gap-x-2 text-white p-2 dark:bg-purple-200'>
                         <HiOutlineLogin className='hi-icon text-white' />
                         <p>ورود به سایت</p>
                     </Link>

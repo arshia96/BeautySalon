@@ -1,19 +1,15 @@
 import React from 'react'
 
-function SingleImageCard({ imageSource, text, onClick, buttonText, height }) {
-    const style = { 
-        backgroundImage: `url(${ imageSource })`, 
-        backgroundPosition: "center",
-        backgroundSize: "cover", 
-        backgroundRepeat: "no-repeat",
-        height: height
-    }
+function SingleImageCard({ imgSrc, title, children, btnColor = "secondary", btnText, onclick }) {
     return (
-        <div className='mt-2 relative w-full rounded-md' 
-        style={style}>
-            <div className='absolute bottom-3 w-full text-center'>
-                <p className='text-secondary-700'>{ text }</p>
-                <button className='btn bg-purple-300 px-5 py-2 w-fit' onClick={ onClick() }>{ buttonText }</button>
+        <div className='rounded-md pb-2 space-y-5'>
+            <div className='flex overflow-hidden rounded-md'>
+                <img className='m-auto rounded-md h-64' src={imgSrc} alt={title} />
+            </div>
+            <h3 className='text-xl font-bold text-center text-secondary-800'>{title}</h3>
+            {children}
+            <div className='w-full flex justify-center'>
+                <button className={`text-white btn btn--${btnColor} text-center py-2 rounded-full w-48`} onClick={onclick()}>{btnText}</button>
             </div>
         </div>
     )

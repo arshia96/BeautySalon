@@ -1,34 +1,34 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import CustomNavLink from '../../ui/CustomNavLink'
+import CustomHeaderNavLink from '../../ui/CustomHeaderNavLink'
 
 function HeaderMenu() {
     return (
         <ul className='flex gap-x-4 items-center align-middle'>
             <li className='flex'>
-                <CustomNavLink to="/">
+                <CustomHeaderNavLink to="/">
                     <p>خانه</p>
-                </CustomNavLink>
+                </CustomHeaderNavLink>
             </li>
             <li className='flex'>
-                <CustomNavLink to="blog">
+                <CustomHeaderNavLink to="blog">
                     <p>بلاگ</p>
-                </CustomNavLink>
+                </CustomHeaderNavLink>
             </li>
             <li className='flex'>
-                <CustomNavLink to="portfolio">
+                <CustomHeaderNavLink to="portfolio">
                     <p>نمونه کار</p>
-                </CustomNavLink>
+                </CustomHeaderNavLink>
             </li>
             <li className='flex'>
-                <CustomNavLink to="price">
+                <CustomHeaderNavLink to="price">
                     <p>تعرفه</p>
-                </CustomNavLink>
+                </CustomHeaderNavLink>
             </li>
             <li className='flex'>
-                <CustomNavLink to="contact-us">
+                <CustomHeaderNavLink to="contact-us">
                     <p>تماس با ما</p>
-                </CustomNavLink>
+                </CustomHeaderNavLink>
             </li>
         </ul>
     )
