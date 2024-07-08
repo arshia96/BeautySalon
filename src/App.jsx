@@ -13,7 +13,7 @@ import EventsCalendar from './features/date/EventsCalendar';
 import AllTimes from './features/customer/AllTimes';
 import Portfolios from './pages/Portfolios';
 import Auth from './pages/Auth';
-
+import CompleteProfile from './pages/CompleteProfile';
 const queryClient = new QueryClient();
 function App() {
   return (
@@ -25,6 +25,7 @@ function App() {
             <Route path="/demo" element={<EventsCalendar />} />
             <Route path="*" element={<NotFound />} />
             <Route path="/auth" element={<Auth />} />
+            <Route path="/complete-profile" element={<CompleteProfile />} />
 
             {/* Customer Dashboard */}
             <Route path="/customer" element={

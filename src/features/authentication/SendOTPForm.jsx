@@ -6,7 +6,6 @@ import Form from '../../ui/Form';
 function SendOTPForm({ setStep, setEmail, setPhoneNumber, setMethod }) {
     const { register, handleSubmit, formState:{errors} } = useForm();
     const onSubmit = (data) => {
-        console.log(data);
         var regexphone = new RegExp('^(\\+98|0)?9\\d{9}$');
         var resultphone = regexphone.test(data.loginMethod);
         var regexemail = new RegExp(/^(?:[A-Z0-9._%+-]+@\w+\.\w{2,3})$/i);

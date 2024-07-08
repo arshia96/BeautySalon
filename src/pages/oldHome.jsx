@@ -14,7 +14,7 @@ import TopHeader from '../mainpages/header/TopHeader';
 function Home() {
   const navigate = useNavigate();
   return (
-    <div className='h-full bg-gradient-to-b from-pink-100 to-purple-200 dark:from-pink-100 dark:to-pink-50'>
+    <div className='h-full bg-pink-50'>
       <div className=''>
         <section>
           <TopHeader />
@@ -72,7 +72,7 @@ function Home() {
           </div>
         </section>
 
-        <section className=' pt-20 pb-28'>
+        <section className='bg-pink-200 pt-20 pb-28'>
           <section className=''>
             <div className="container xl:max-w-screen-xl grid grid-cols-3 gap-x-5 h-72">
               <CardImageText
@@ -175,7 +175,7 @@ function Home() {
           </div>
         </section>
 
-        <footer className='p-3 h-fit  rounded-md'>
+        <footer className='p-3 h-fit bg-pink-100 rounded-md'>
           <div className="container xl:max-w-screen-xl space-y-5">
             <div className='flex w-full h-20 justify-center'>
               <img src="images/background.jpg" alt="Logo" /> تصویر لوگو

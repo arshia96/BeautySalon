@@ -2,12 +2,12 @@ import { useMutation } from '@tanstack/react-query';
 import React, { useEffect, useState } from 'react'
 import OTPInput from 'react-otp-input'
 // import { checkOtp } from '../../services/authService';
-// import toast from'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 import { HiArrowRight } from "react-icons/hi";
 import { CiEdit } from "react-icons/ci";
 import Loading from '../../ui/Loading';
 import { useReadOTP } from 'react-read-otp';
+import toast from 'react-hot-toast';
 
 const RESEND_TIME = 90;
 const ROLEUrls = {
@@ -27,7 +27,10 @@ function CheckOTPForm({ wayOtp, onBack, onReSendOtp, otpResponse }) {
     // });
     const checkOtpHandler = async (e) => {
       e.preventDefault();
-      console.log("ok");
+      if (otp === "111111"){
+        console.log("ok");
+        return navigate("/complete-profile");
+      }
     //   try {
     //     const {message, user} = await mutateAsync({phoneNumber, otp});
     //     toast.success(message);
@@ -77,6 +80,9 @@ function CheckOTPForm({ wayOtp, onBack, onReSendOtp, otpResponse }) {
           <button onClick={() => {
             onReSendOtp();
             setTime(RESEND_TIME);
+            toast("کدتایید مجددا ارسال شد", {
+                  icon: "📨",
+            });
           }}>ارسال مجدد کد تایید</button>
         )}
       </div>
