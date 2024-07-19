@@ -13,7 +13,11 @@ import EventsCalendar from './features/date/EventsCalendar';
 import AllTimes from './features/customer/AllTimes';
 import Portfolios from './pages/Portfolios';
 import Auth from './pages/Auth';
-import CompleteProfile from './pages/CompleteProfile';
+import PageLayout from './ui/PageLayout';
+import WhoWeAre from './pages/page/WhoWeAre';
+import MeetOurTeam from './pages/page/MeetOurTeam';
+
+
 const queryClient = new QueryClient();
 function App() {
   return (
@@ -22,10 +26,18 @@ function App() {
         <Toaster />
         <Routes>
             <Route path="/" element={<Home />} />
+
+            <Route path="/p" element={
+                <PageLayout />
+            }>
+              <Route path="who-we-are" element={<WhoWeAre />} />
+              <Route path="meet-our-team" element={<MeetOurTeam />} />
+            </Route>
+
             <Route path="/demo" element={<EventsCalendar />} />
             <Route path="*" element={<NotFound />} />
             <Route path="/auth" element={<Auth />} />
-            <Route path="/complete-profile" element={<CompleteProfile />} />
+
 
             {/* Customer Dashboard */}
             <Route path="/customer" element={
@@ -39,6 +51,7 @@ function App() {
               {/*Should Remove For Customers*/} <Route path="times" element={<AllTimes />} />
             </Route>
 
+
             {/* Owner Dashboard */}
             <Route path="/owner" element={
                   <CustomerLayout />
@@ -50,6 +63,7 @@ function App() {
                 <Route path="portfolios" element={<Portfolios />} />
                 {/*Should Remove For Customers*/} <Route path="times" element={<AllTimes />} />
             </Route>
+
 
           </Routes>
       </QueryClientProvider>

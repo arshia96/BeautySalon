@@ -103,11 +103,12 @@ function ReservTime({ times }) {
           </p>
         </div>
         <div className='flex flex-row gap-x-4 flex-wrap gap-y-5'>
-          {timesOnDay && timesOnDay.map(item => (
+          {/* {timesOnDay && timesOnDay.map(item => (
             item.map(i => i.status==="available" && (
               <TimeItem key={i.id} label={i.value} value={selectedTime} setValue={setSelectedTime} />
             ))
-          ))}
+          ))} */}
+          
         </div>
         <div>
         {selectedTime && (

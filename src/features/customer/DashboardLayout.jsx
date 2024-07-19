@@ -8,9 +8,11 @@ function DashboardLayout() {
       <div className="text-center">
         <p className="text-bold text-2xl text-secondary-900">صفحه داشبورد</p>
       </div>
+      <p className="text-bold text-2xl text-secondary-900">راست ترین</p>
+      <p className="text-bold text-2xl text-secondary-900 text-left">چپ ترین</p>
       {/* <Stats proposals = {proposals} /> */}
     </div>
   )
 }
 
-export default DashboardLayout
+export default DashboardLayout;

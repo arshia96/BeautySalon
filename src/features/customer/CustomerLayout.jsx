@@ -4,10 +4,10 @@ import CustomNavLink from '../../ui/CustomNavLink'
 import Sidebar from '../../ui/Sidebar'
 import { HiClock, HiCollection, HiHome, HiOutlineTicket, HiUser, HiViewGrid } from 'react-icons/hi'
 
-function FreelancerLayout() {
+function CustomerLayout() {
   return (
     <AppLayout>
-        <Sidebar>
+        {({ openSidebar }) => <Sidebar openSidebar={openSidebar}>
             <CustomNavLink to="dashboard">
                 <HiHome />
                 <span>داشبورد</span>
@@ -37,9 +37,9 @@ function FreelancerLayout() {
                 <HiClock />
                 <span>همه زمان ها <br />(مخصوص ادمین)</span>
             </CustomNavLink>
-        </Sidebar>
+        </Sidebar>}
     </AppLayout>
   )
 }
 
-export default FreelancerLayout
+export default CustomerLayout

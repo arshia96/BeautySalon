@@ -2,14 +2,13 @@ import React, { useState } from 'react'
 import HeaderMenu from './HeaderMenu';
 import { HiMenu, HiX } from 'react-icons/hi';
 
-function Header() {
-  const [ open, setOpen ] = useState(false); 
+function Header({ openSidebar, setOpenSidebar }) {
   return (
     <div className='bg-secondary-0 py-4 px-8 border-b border-secondary-200'>
       <div className={`container xl:max-w-screen-lg flex flex-row justify-between`}>
         <div className='flex flex-row items-center align-middle'>
-          <div className='ml-5'>
-            {!open ? 
+          <div className='ml-5 cursor-pointer' onClick={() => setOpenSidebar(!openSidebar)}>
+            {!openSidebar ? 
             <HiMenu className='hi-icon text-secondary-900 transition-all ease-out' /> 
             : 
             <HiX className='hi-icon text-secondary-900 transition-all ease-out' />

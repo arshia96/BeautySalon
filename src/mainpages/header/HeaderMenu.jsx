@@ -11,13 +11,13 @@ function HeaderMenu() {
                 </CustomHeaderNavLink>
             </li>
             <li className='flex'>
-                <CustomHeaderNavLink to="blog">
-                    <p>بلاگ</p>
+                <CustomHeaderNavLink to="who-we-are">
+                    <p>درباره ما</p>
                 </CustomHeaderNavLink>
             </li>
             <li className='flex'>
-                <CustomHeaderNavLink to="portfolio">
-                    <p>نمونه کار</p>
+                <CustomHeaderNavLink to="meet-our-team">
+                    <p>اعضای تیم ما</p>
                 </CustomHeaderNavLink>
             </li>
             <li className='flex'>

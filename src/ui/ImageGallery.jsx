@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import OpenImageModal from './OpenImageModal';
-import { HiSearchCircle } from 'react-icons/hi';
+import { HiOutlineArrowsExpand } from 'react-icons/hi';
 
 function ImageGallery({ images }) {
     const [ open, setOpen ] = useState(false);
@@ -18,7 +18,7 @@ function ImageGallery({ images }) {
                         <div
                             className="rounded-lg absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-white bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-60">
                                 <p className='text-center mt-16'>
-                                    {<HiSearchCircle className='w-10 h-10 mx-auto' />}
+                                    {<HiOutlineArrowsExpand className='w-10 h-10 mx-auto' />}
                                 </p>
                         </div>
                     </div>

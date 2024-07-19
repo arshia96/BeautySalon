@@ -17,36 +17,41 @@ const ROLEUrls = {
   OWNER : "/owner"
 }
 
-function CheckOTPForm({ wayOtp, onBack, onReSendOtp, otpResponse }) {
+function CheckOTPForm({ wayOtp, onBack, onReSendOtp, otpResponse, setStep, setRegisterInfo, registerInfo }) {
     const [otp, setOtp] = useState('');
     useReadOTP(setOtp);
     const [time, setTime] = useState(RESEND_TIME);
     const navigate = useNavigate();
     // const { isPending, mutateAsync } = useMutation ({
-    //     mutationFn: checkOtp,
+    //     mutationFn: registerOtp,
     // });
     const checkOtpHandler = async (e) => {
       e.preventDefault();
-      if (otp === "111111"){
-        console.log("ok");
-        return navigate("/complete-profile");
-      }
-    //   try {
-    //     const {message, user} = await mutateAsync({phoneNumber, otp});
-    //     toast.success(message);
-    //     if (!user.isActive) return navigate('/complete-profile');
-    //     if (user.status !== 2) {
-    //       navigate("/");
-    //       toast("پروفایل شما در انتظار تایید است", {
-    //         icon: '👨🏻‍💻',
-    //       });
-    //       return;
-    //     }
-    //     if (Object.keys(ROLEUrls).includes(user.role)) return navigate(`${ROLEUrls[user.role]}`);
-    //   }
-    //   catch (error) {
-    //     toast.error(error?.response?.data?.message);
-    //   }
+      // if (otp === "111111"){
+      // if (otp === "111111"){ // Must Be changed .
+        console.log("otp ok");
+        return setStep(3);  // navigate("/complete-profile");
+      // }
+      
+      // try {
+      //   const { message } = await mutateAsync(data);
+      //   toast.success(message);
+      //   console.log("verify-otp ok");
+      //   setRegisterInfo({...registerInfo, otp});
+      //   return setStep(3);
+        // if (!user.isActive) return navigate('/complete-profile');
+        // if (user.status !== 2) {
+        //   navigate("/");
+        //   toast("پروفایل شما در انتظار تایید است", {
+        //     icon: '👨🏻‍💻',
+        //   });
+        //   return;
+        // }
+        // if (Object.keys(ROLEUrls).includes(user.role)) return navigate(`${ROLEUrls[user.role]}`);
+      // }
+      // catch (error) {
+      //   toast.error(error?.response?.data?.message);
+      // }
     }
     
     useEffect(() => {
